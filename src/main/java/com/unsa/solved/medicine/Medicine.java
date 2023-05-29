@@ -16,13 +16,24 @@ public class Medicine extends UnicastRemoteObject implements MedicineInterface {
     public Medicine(String name, float price, int stock) throws Exception {
         super();
         this.name = name;
-        this.unitPrice = price;
+        unitPrice = price;
         this.stock = stock;
     }
     @Override
     public Medicine getMedicine(int amount) throws Exception {
-        if (this.stock <= 0) {
-            throw new StockEx
-        }
+        if (this.stock <= 0)
+        throw new StockException("Stock empty");
+        if (this.stock - amount < 0)
+        throw new StockException("Stock not amount of medicine");
+        this.stock -= amount;
+        Medicine aux = new Medicine(name, unitPrice * amount, stock);
+        return aux;
+    }
+    @Override
+    public int getStock() throws Exception {
+        return this.stock;
+    }
+    public String print() throws Exception{
+        return this.name + "\nPrice: " + this.unitPrice + "\nStock: " + this.stock;
     }
 }
