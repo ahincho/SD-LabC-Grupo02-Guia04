@@ -11,10 +11,10 @@ public class CalculatorClient {
         int num2 = Integer.parseInt(args[1]);
         try {
             Calculator c = (Calculator) Naming.lookup("rmi://localhost/CalculatorService");
-            System.out.println( "The substraction of " + num1 + " and " + num2 + " is: " + c.sub(num1, num2) );
-            System.out.println( "The addition of " + num1 + " and " + num2 + " is: " + c.add(num1, num2) );
-            System.out.println( "The multiplication of " + num1 + " and " + num2 + " is: " + c.mul(num1, num2) );
-            System.out.println( "The division of " + num1 + " and " + num2 + " is: " + c.div(num1, num2) );
+            System.out.println("The substraction of " + num1 + " and " + num2 + " is: " + c.sub(num1, num2));
+            System.out.println("The addition of " + num1 + " and " + num2 + " is: " + c.add(num1, num2));
+            System.out.println("The multiplication of " + num1 + " and " + num2 + " is: " + c.mul(num1, num2));
+            System.out.println("The division of " + num1 + " and " + num2 + " is: " + c.div(num1, num2));
         } catch (MalformedURLException murle) {
             System.out.println();
             System.out.println("MalformedURLException");
