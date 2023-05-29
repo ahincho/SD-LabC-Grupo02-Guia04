@@ -14,7 +14,7 @@ public class ServerSide {
             pharmacy.addMedicine("Aspirina", 5.0f, 40);
             Registry registry = LocateRegistry.createRegistry(1099);
             Naming.rebind("rmi://localhost:1099/pharmacy", pharmacy);
-            System.out.println("Server ready.");
+            System.out.println("Pharmacy Server Is Ready.");
         } catch (Exception e) {
             e.printStackTrace();
         }

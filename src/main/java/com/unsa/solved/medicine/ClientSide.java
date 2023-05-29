@@ -12,7 +12,8 @@ public class ClientSide {
         Scanner sc = new Scanner(System.in);
         try {
             StockInterface pharm = (StockInterface) Naming.lookup("rmi://localhost:1099/pharmacy");
-            System.out.println("Ingresa la opcion.\n1.Listar productos.\n2. Comprar productos.");
+            System.out.println("Ingresa la opcion.\n1. Listar productos.\n2. Comprar productos.");
+            System.out.print("Ingrese una opcion: ");
             int selection = sc.nextInt();
             // Enumerator
             if( selection == 1 ) {
